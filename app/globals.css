@@ -293,7 +293,8 @@ footer{background:var(--ink);color:var(--pearl);padding:90px 0 40px}
 .foot-social{display:flex;gap:16px;margin-top:8px}
 .foot-social a{width:40px;height:40px;border:1px solid rgba(248,245,240,0.25);display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--pearl)}
 .foot-social a:hover{border-color:var(--rose);color:var(--rose)}
-.foot-bot{padding-top:32px;border-top:1px solid rgba(248,245,240,0.1);display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,245,240,0.4)}
+.foot-bot{padding-top:32px;border-top:1px solid rgba(248,245,240,0.1);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,245,240,0.4)}
+.foot-credit a{color:var(--gold)}
 .foot-bot a:hover{color:var(--rose)}
 
 .loc-maps-link{display:inline-flex;align-items:center;gap:12px;margin-top:32px;font-family:var(--sans);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--sage-deep);transition:gap .3s}

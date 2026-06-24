@@ -637,48 +637,6 @@ export default function Home() {
                 </svg>{" "}
                 Seg. a Sex. · 09h às 19h
               </div>
-              <div className="lf">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                >
-                  <rect x="3" y="11" width="18" height="10" rx="1" />
-                  <path d="M7 11V7a5 5 0 0110 0v4" />
-                </svg>{" "}
-                Entrada reservada
-              </div>
-              <div className="lf">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                >
-                  <path d="M3 17h18M5 17V9l4-3h6l4 3v8" />
-                  <circle cx="8" cy="17" r="2" />
-                  <circle cx="16" cy="17" r="2" />
-                </svg>{" "}
-                Valet privativo
-              </div>
-              <div className="lf">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                >
-                  <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
-                </svg>{" "}
-                Privacidade absoluta
-              </div>
             </div>
             <a
               className="loc-maps-link reveal reveal-d4"
@@ -836,10 +794,7 @@ export default function Home() {
                     marginLeft: -10,
                   }}
                 />
-                <p>
-                  Atelier clínico em Belo Horizonte. Por agendamento, para quem
-                  entende que discrição é o novo luxo.
-                </p>
+                <p>Atelier clínico em Belo Horizonte.</p>
               </div>
               <div className="foot-col">
                 <h2>Navegar</h2>
@@ -926,6 +881,16 @@ export default function Home() {
             <div className="foot-bot">
               <div>
                 © MMXXVI · {site.name} · {site.cro}
+              </div>
+              <div className="foot-credit">
+                Desenvolvido por{" "}
+                <a
+                  href="https://www.attodigitale.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Atto Digitale
+                </a>
               </div>
               <div>
                 <a href="/politica-de-privacidade">Política de Privacidade</a> ·{" "}
