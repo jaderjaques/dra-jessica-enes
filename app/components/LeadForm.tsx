@@ -60,6 +60,15 @@ export default function LeadForm() {
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
+    // Dispara a conversão do Google Ads (lead = formulário enviado).
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18269556080/qAypCIya9MQcEPCazYdE",
+        value: 1.0,
+        currency: "BRL",
+      });
+    }
+
     // Monta a mensagem e abre o WhatsApp da Dra. Jéssica com os dados.
     const message = [
       "Olá! Gostaria de agendar uma avaliação.",
