@@ -82,8 +82,8 @@ export default function Home() {
               com <span className="accent">discrição</span>.
             </h1>
             <p className="hero-promise reveal reveal-d2">
-              Gerenciamento de idade com <em>técnica autoral</em>. Resultado
-              natural, com a sofisticação que se constrói na ausência.
+              <em>Técnica própria</em> para cuidar dos sinais do tempo com
+              naturalidade. Aqui, o melhor resultado é o que ninguém percebe.
             </p>
             <div className="hero-meta reveal reveal-d3">
               <a href="#agendar" className="hero-cta">
@@ -223,8 +223,9 @@ export default function Home() {
                   Técnica <em>integrada</em>
                 </h3>
                 <p>
-                  Endodontia e harmonização facial conversam: estrutura, oclusão
-                  e tecido tratados como sistema único.
+                  Cada aplicação é pensada para o conjunto do rosto. Trato
+                  proporções, volumes e expressão de forma harmônica, nunca
+                  pontos isolados.
                 </p>
               </div>
               <div className="pillar reveal reveal-d2">
