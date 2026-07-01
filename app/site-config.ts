@@ -46,7 +46,7 @@ export const googleAds = {
     leadForm: "qAypCIya9MQcEPCazYdE",
     // Conversão "Contato — WhatsApp" (origem: Site)
     whatsapp: "EFNjCLjp-cgcEPCazYdE",
-    // Conversão secundária "Clique em Agendar" (intenção): colar o rótulo quando criar
-    agendarClick: "",
+    // Conversão secundária "Clique em Agendar" (intenção, origem: Site)
+    agendarClick: "J-v4CPOi-8gcEPCazYdE",
   },
 } as const;
