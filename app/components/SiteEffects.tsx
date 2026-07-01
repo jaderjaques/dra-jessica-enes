@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { googleAds } from "../site-config";
+import { trackAdsConversion } from "../track";
 
 /**
- * Comportamentos globais: scroll suave para âncoras (com offset da nav fixa)
- * e revelação ao rolar (IntersectionObserver). O estado "scrolled" da nav e o
- * menu mobile ficam em SiteNav.
+ * Comportamentos globais: scroll suave para âncoras (com offset da nav fixa),
+ * revelação ao rolar (IntersectionObserver) e rastreio de conversões em cliques
+ * de WhatsApp (delegado, cobre qualquer link wa.me do site).
  */
 export default function SiteEffects() {
   useEffect(() => {
@@ -14,7 +16,14 @@ export default function SiteEffects() {
     ).matches;
 
     const onClick = (e: Event) => {
-      const anchor = (e.target as HTMLElement).closest('a[href^="#"]');
+      const el = e.target as HTMLElement;
+
+      // Conversão de WhatsApp: qualquer link wa.me (botão flutuante, rodapé...).
+      if (el.closest('a[href*="wa.me"]')) {
+        trackAdsConversion(googleAds.labels.whatsapp);
+      }
+
+      const anchor = el.closest('a[href^="#"]');
       if (!anchor) return;
       const id = anchor.getAttribute("href") || "";
       if (id.length < 2) return;
