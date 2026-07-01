@@ -44,7 +44,7 @@ export const googleAds = {
   labels: {
     // Conversão "Enviar formulário de lead" (origem: Site)
     leadForm: "qAypCIya9MQcEPCazYdE",
-    // Conversão "Contato — WhatsApp": colar aqui o rótulo quando criar no Google Ads
-    whatsapp: "",
+    // Conversão "Contato — WhatsApp" (origem: Site)
+    whatsapp: "EFNjCLjp-cgcEPCazYdE",
   },
 } as const;
