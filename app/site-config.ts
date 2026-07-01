@@ -34,3 +34,17 @@ export const whatsappMessage = encodeURIComponent(
 );
 
 export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${whatsappMessage}`;
+
+/**
+ * Google Ads — ID da conta e rótulos (labels) de cada ação de conversão.
+ * Cada rótulo vem do Google Ads ao criar a "ação de conversão" (parte após a "/").
+ */
+export const googleAds = {
+  id: "AW-18269556080",
+  labels: {
+    // Conversão "Enviar formulário de lead" (origem: Site)
+    leadForm: "qAypCIya9MQcEPCazYdE",
+    // Conversão "Contato — WhatsApp": colar aqui o rótulo quando criar no Google Ads
+    whatsapp: "",
+  },
+} as const;

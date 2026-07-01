@@ -1,4 +1,7 @@
-import { whatsappLink } from "../site-config";
+"use client";
+
+import { whatsappLink, googleAds } from "../site-config";
+import { trackAdsConversion } from "../track";
 
 export default function WhatsAppButton() {
   return (
@@ -8,6 +11,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Conversar no WhatsApp"
+      onClick={() => trackAdsConversion(googleAds.labels.whatsapp)}
     >
       <svg
         width="26"
