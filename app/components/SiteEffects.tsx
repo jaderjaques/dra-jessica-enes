@@ -27,6 +27,11 @@ export default function SiteEffects() {
       if (!anchor) return;
       const id = anchor.getAttribute("href") || "";
       if (id.length < 2) return;
+
+      // Intenção: clique em qualquer botão que leva ao formulário (#agendar).
+      if (id === "#agendar") {
+        trackAdsConversion(googleAds.labels.agendarClick);
+      }
       const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
