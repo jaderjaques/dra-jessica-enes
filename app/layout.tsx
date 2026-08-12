@@ -8,7 +8,7 @@ import {
   JetBrains_Mono,
 } from "next/font/google";
 import "./globals.css";
-import { site } from "./site-config";
+import { site, ga4Id } from "./site-config";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -115,7 +115,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${lora.variable} ${inter.variable} ${italianno.variable} ${jetbrains.variable}`}
       >
-        {/* Google tag (gtag.js) — Google Ads */}
+        {/* Google tag (gtag.js) — Google Ads + GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18269556080"
           strategy="afterInteractive"
@@ -124,7 +124,7 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'AW-18269556080');`}
+gtag('config', 'AW-18269556080');${ga4Id ? `\ngtag('config', '${ga4Id}');` : ""}`}
         </Script>
         <script
           type="application/ld+json"
