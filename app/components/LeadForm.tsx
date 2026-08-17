@@ -13,7 +13,7 @@ function maskPhone(value: string): string {
   return d.replace(/^(\d{2})(\d{1})(\d{4})(\d{0,4})/, "($1) $2 $3-$4");
 }
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "success" | "blocked";
 
 type Errors = Partial<Record<"name" | "phone" | "email" | "interest", string>>;
 
@@ -45,6 +45,7 @@ export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
   const [phone, setPhone] = useState("");
+  const [waLink, setWaLink] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,7 +80,11 @@ export default function LeadForm() {
     )}`;
 
     // Aberto na hora (gesto do usuário) para não ser bloqueado pelo navegador.
-    window.open(waUrl, "_blank", "noopener,noreferrer");
+    // Sem "noopener" porque com ele window.open sempre devolve null e não daria
+    // para saber se o pop-up foi bloqueado. O opener é anulado logo em seguida.
+    const win = window.open(waUrl, "_blank");
+    if (win) win.opener = null;
+    setWaLink(waUrl);
 
     // Registro best-effort no servidor (não bloqueia o fluxo).
     fetch("/api/lead", {
@@ -88,16 +93,17 @@ export default function LeadForm() {
       body: JSON.stringify(data),
     }).catch(() => {});
 
-    setStatus("success");
+    setStatus(win ? "success" : "blocked");
     form.reset();
     setPhone("");
-    setTimeout(() => setStatus("idle"), 6000);
   }
 
   const label =
     status === "success"
       ? "Conversa aberta no WhatsApp ✓"
-      : "Agendar pelo WhatsApp";
+      : status === "blocked"
+        ? "Toque para abrir a conversa"
+        : "Agendar pelo WhatsApp";
 
   return (
     <form className="form reveal reveal-d2" onSubmit={handleSubmit} noValidate>
@@ -192,12 +198,24 @@ export default function LeadForm() {
       <button
         type="submit"
         className={`form-cta${status === "success" ? " sent" : ""}`}
-        disabled={status === "submitting"}
         aria-label="Agendar avaliação pelo WhatsApp"
       >
-        <span aria-live="polite">{label}</span>
+        <span>{label}</span>
         <span className="arr" />
       </button>
+
+      {waLink && (
+        <p className="form-followup" role="status">
+          {status === "blocked"
+            ? "O navegador bloqueou a janela do WhatsApp."
+            : "Se a conversa não abriu automaticamente,"}{" "}
+          <a href={waLink} target="_blank" rel="noopener noreferrer">
+            abrir no WhatsApp
+          </a>{" "}
+          ou ligue para{" "}
+          <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>.
+        </p>
+      )}
 
       <div className="form-foot">
         Seus dados são tratados com sigilo absoluto, usados apenas para retornar

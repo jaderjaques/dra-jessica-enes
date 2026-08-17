@@ -3,6 +3,7 @@ import SiteEffects from "./components/SiteEffects";
 import SiteNav from "./components/SiteNav";
 import LeadForm from "./components/LeadForm";
 import WhatsAppButton from "./components/WhatsAppButton";
+import MobileCta from "./components/MobileCta";
 import { site, reviews } from "./site-config";
 import draJessica from "../public/assets/dra-jessica.png";
 import logo from "../public/assets/logo-footer.png";
@@ -567,13 +568,19 @@ export default function Home() {
                   leitura, escuto suas inquietações e desenhamos juntos o plano
                   que faz sentido para você.
                 </p>
-                <div className="note reveal reveal-d2">
-                  <span className="dot" />
-                  <div>
-                    4 novos pacientes por semana, para preservar a
-                    personalização.
-                  </div>
-                </div>
+                <ul className="cta-assure reveal reveal-d2">
+                  <li>
+                    A avaliação não tem custo e leva cerca de 45 minutos.
+                  </li>
+                  <li>
+                    Você sai com um plano de gerenciamento de pele desenhado
+                    para o seu rosto.
+                  </li>
+                  <li>
+                    Nada é aplicado nesse primeiro encontro. O tratamento só
+                    começa quando você aprova o plano.
+                  </li>
+                </ul>
               </div>
 
               <LeadForm />
@@ -881,6 +888,7 @@ export default function Home() {
       </main>
 
       <WhatsAppButton />
+      <MobileCta />
     </>
   );
 }

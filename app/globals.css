@@ -238,8 +238,10 @@ section{padding:calc(140px * var(--density)) 0;position:relative}
 .cta-left h2 .script{font-family:var(--script);color:var(--rose);font-size:1.05em}
 .cta-left p{font-size:17px;line-height:1.65;color:rgba(248,245,240,0.85);max-width:440px;font-weight:300;margin-bottom:32px}
 .cta-left p em{font-family:var(--display);font-style:italic}
-.cta-left .note{display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px solid rgba(248,245,240,0.25);max-width:440px;font-size:13px;line-height:1.5;color:rgba(248,245,240,0.85)}
-.cta-left .note .dot{width:8px;height:8px;border-radius:50%;background:var(--rose);flex-shrink:0;animation:pulse 2.4s infinite}
+.cta-assure{list-style:none;max-width:460px;padding:22px 24px;border:1px solid rgba(248,245,240,0.25)}
+.cta-assure li{position:relative;padding-left:26px;font-size:14px;line-height:1.6;color:rgba(248,245,240,0.9)}
+.cta-assure li+li{margin-top:14px;padding-top:14px;border-top:1px solid rgba(248,245,240,0.14)}
+.cta-assure li::before{content:"";position:absolute;left:0;top:0.55em;width:9px;height:9px;border-radius:50%;border:1px solid var(--champagne)}
 
 .form{background:var(--pearl);color:var(--ink);padding:48px;position:relative}
 .form::before{content:"";position:absolute;top:-12px;left:-12px;right:-12px;bottom:-12px;border:1px solid var(--gold);pointer-events:none}
@@ -260,6 +262,8 @@ section{padding:calc(140px * var(--density)) 0;position:relative}
 .form-cta .arr{width:24px;height:1px;background:currentColor;position:relative;transition:width .3s}
 .form-cta .arr:after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
 .form-cta:hover .arr{width:32px}
+.form-followup{margin-top:16px;padding:14px 16px;background:var(--sage-pale);font-size:13px;line-height:1.55;color:var(--charcoal)}
+.form-followup a{color:var(--sage-deep);font-weight:500;border-bottom:1px solid var(--sage-deep)}
 .form-foot{margin-top:20px;font-size:11px;color:var(--muted);line-height:1.5}
 
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
@@ -306,6 +310,12 @@ footer{background:var(--ink);color:var(--pearl);padding:90px 0 40px}
 
 .foot-link{color:var(--sage-deep);text-decoration:underline;text-underline-offset:2px}
 
+/* MOBILE CTA BAR */
+.mobile-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(248,245,240,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.6,.2,1)}
+.mobile-cta.is-visible{transform:translateY(0)}
+.mobile-cta-primary{flex:1;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--ink);color:var(--pearl);font-family:var(--sans);font-size:12px;letter-spacing:0.24em;text-transform:uppercase}
+.mobile-cta-wa{display:flex;align-items:center;justify-content:center;width:52px;min-height:52px;background:#25D366;color:#fff;flex-shrink:0}
+
 /* WHATSAPP FLOAT */
 .wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.22);transition:transform .25s, box-shadow .25s}
 .wa-float:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,0.28)}
@@ -333,6 +343,11 @@ footer{background:var(--ink);color:var(--pearl);padding:90px 0 40px}
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-toggle{display:flex}
+  /* A barra fixa assume o papel do botao flutuante, para nao empilhar dois WhatsApp */
+  .mobile-cta{display:flex}
+  .wa-float{display:none}
+  /* espaco para a barra fixa nao cobrir o fim do rodape */
+  footer{padding-bottom:110px}
   .hero{grid-template-columns:1fr;padding-top:120px}
   .hero-right{height:auto;aspect-ratio:4/5;min-height:auto}
   .about, .exp-grid, .cta-grid, .location, .method-head, .procedures-head, .method-quote, .intro-strip{grid-template-columns:1fr;gap:40px}
