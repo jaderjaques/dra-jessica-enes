@@ -38,8 +38,8 @@ export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${whatsappMessa
  * Google Ads — ID da conta e rótulos (labels) de cada ação de conversão.
  * Cada rótulo vem do Google Ads ao criar a "ação de conversão" (parte após a "/").
  */
-/** GA4 — Measurement ID (G-XXXXXXXXXX). Vazio = GA4 desligado. */
-export const ga4Id = "";
+/** GA4 — Measurement ID. Vazio = GA4 desligado. */
+export const ga4Id = "G-25VNWPMF2W";
 
 export const googleAds = {
   id: "AW-18269556080",

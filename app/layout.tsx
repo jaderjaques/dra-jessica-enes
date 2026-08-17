@@ -111,10 +111,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <body
-        className={`${cormorant.variable} ${lora.variable} ${inter.variable} ${italianno.variable} ${jetbrains.variable}`}
-      >
+    <html
+      lang="pt-BR"
+      className={`${cormorant.variable} ${lora.variable} ${inter.variable} ${italianno.variable} ${jetbrains.variable}`}
+    >
+      <body>
         {/* Google tag (gtag.js) — Google Ads + GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18269556080"

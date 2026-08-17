@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { site, googleAds } from "../site-config";
-import { trackAdsConversion } from "../track";
+import { trackAdsConversion, trackLead } from "../track";
 
 function maskPhone(value: string): string {
   const d = value.replace(/\D/g, "").slice(0, 11);
@@ -61,8 +61,9 @@ export default function LeadForm() {
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
-    // Dispara a conversão do Google Ads (lead = formulário enviado).
+    // Conversão do Google Ads + evento de lead no GA4.
     trackAdsConversion(googleAds.labels.leadForm);
+    trackLead("formulario");
 
     // Monta a mensagem e abre o WhatsApp da Dra. Jéssica com os dados.
     const message = [

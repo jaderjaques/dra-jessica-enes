@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { googleAds } from "../site-config";
-import { trackAdsConversion } from "../track";
+import { trackAdsConversion, trackLead } from "../track";
 
 /**
  * Comportamentos globais: scroll suave para âncoras (com offset da nav fixa),
@@ -21,6 +21,7 @@ export default function SiteEffects() {
       // Conversão de WhatsApp: qualquer link wa.me (botão flutuante, rodapé...).
       if (el.closest('a[href*="wa.me"]')) {
         trackAdsConversion(googleAds.labels.whatsapp);
+        trackLead("whatsapp");
       }
 
       const anchor = el.closest('a[href^="#"]');
