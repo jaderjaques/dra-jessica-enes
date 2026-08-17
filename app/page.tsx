@@ -3,7 +3,7 @@ import SiteEffects from "./components/SiteEffects";
 import SiteNav from "./components/SiteNav";
 import LeadForm from "./components/LeadForm";
 import WhatsAppButton from "./components/WhatsAppButton";
-import { site } from "./site-config";
+import { site, reviews } from "./site-config";
 import draJessica from "../public/assets/dra-jessica.png";
 import logo from "../public/assets/logo-footer.png";
 
@@ -495,18 +495,6 @@ export default function Home() {
               O <em>resultado</em> mais elogiado
               <br />é o que ninguém percebe.
             </h2>
-            <div className="seal reveal reveal-d2">
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: "var(--gold)",
-                  display: "inline-block",
-                }}
-              />
-              Selo · Resultados Naturais
-            </div>
           </div>
 
           <div className="ba-masonry reveal reveal-d2">
@@ -523,49 +511,39 @@ export default function Home() {
           </p>
 
           <div className="testimonials">
-            <div className="testi reveal">
-              <div className="qm">&rdquo;</div>
-              <blockquote>
-                Voltei da Europa e três pessoas perguntaram se eu havia
-                descansado. Nenhuma percebeu que tinha feito.
-              </blockquote>
-              <div className="who">
-                <div className="ini">M</div>
-                <div>
-                  <div className="nm">M. L.</div>
-                  <div className="rl">Empresária · Lourdes</div>
+            {reviews.map((r, i) => (
+              <figure
+                className={`testi reveal${i ? ` reveal-d${i}` : ""}`}
+                key={r.name}
+              >
+                <div className="stars" aria-label={`${r.stars} de 5 estrelas`}>
+                  {"★".repeat(r.stars)}
                 </div>
-              </div>
-            </div>
-            <div className="testi reveal reveal-d1">
-              <div className="qm">&rdquo;</div>
-              <blockquote>
-                Pesquisei por mais de um ano. Saí da primeira consulta com a
-                sensação rara de ter encontrado a pessoa certa.
-              </blockquote>
-              <div className="who">
-                <div className="ini">C</div>
-                <div>
-                  <div className="nm">C. A.</div>
-                  <div className="rl">Advogada · Savassi</div>
-                </div>
-              </div>
-            </div>
-            <div className="testi reveal reveal-d2">
-              <div className="qm">&rdquo;</div>
-              <blockquote>
-                A Jéssica olhou para o meu rosto inteiro, não para uma ruga.
-                Esse é o diferencial.
-              </blockquote>
-              <div className="who">
-                <div className="ini">R</div>
-                <div>
-                  <div className="nm">R. F.</div>
-                  <div className="rl">Médica · Belvedere</div>
-                </div>
-              </div>
-            </div>
+                <blockquote>{r.text}</blockquote>
+                <figcaption className="who">
+                  <div className="ini" aria-hidden="true">
+                    {r.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="nm">{r.name}</div>
+                    <div className="rl">{r.role}</div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
           </div>
+
+          {site.googleReviewsUrl && (
+            <p className="reviews-link reveal reveal-d2">
+              <a
+                href={site.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver todas as avaliações no Google
+              </a>
+            </p>
+          )}
         </section>
 
         {/* CTA / FORM */}

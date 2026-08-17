@@ -205,9 +205,11 @@ section{padding:calc(140px * var(--density)) 0;position:relative}
 .ba-caption{text-align:center;margin:0 auto 72px;font-size:13px;letter-spacing:0.04em;color:var(--muted)}
 .ba-caption em{font-family:var(--display);font-style:italic;color:var(--sage-deep)}
 
-.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.testi{padding:48px 36px;background:var(--pearl-warm);position:relative;border-top:1px solid var(--gold)}
-.testi .qm{font-family:var(--display);font-style:italic;font-size:80px;color:var(--rose);position:absolute;top:-8px;right:24px;line-height:1}
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1000px;margin:0 auto}
+.testi{padding:44px 36px;background:var(--pearl-warm);position:relative;border-top:1px solid var(--gold);margin:0}
+.testi .stars{color:var(--gold);font-size:15px;letter-spacing:0.18em;margin-bottom:20px}
+.reviews-link{text-align:center;margin-top:32px;font-family:var(--sans);font-size:11px;letter-spacing:0.28em;text-transform:uppercase}
+.reviews-link a{color:var(--sage-deep);border-bottom:1px solid var(--sage-deep);padding-bottom:3px}
 .testi blockquote{font-family:var(--display);font-style:italic;font-weight:400;font-size:22px;line-height:1.45;color:var(--ink);margin-bottom:36px}
 .testi .who{display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid var(--line)}
 .testi .ini{width:44px;height:44px;border-radius:50%;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;color:var(--sage-deep);font-size:18px}

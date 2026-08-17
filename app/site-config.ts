@@ -26,7 +26,29 @@ export const site = {
       "https://www.google.com/maps/search/?api=1&query=R.+Santa+Catarina+813+Santo+Agostinho+Belo+Horizonte+MG+30170-081",
   },
   hours: "Seg. a Sex. · 09h às 19h",
+  // TODO: colar o link do perfil no Google (Maps > Compartilhar). Vazio = link oculto.
+  googleReviewsUrl: "",
 } as const;
+
+/**
+ * Avaliações exibidas no site.
+ * Para adicionar: copie o texto da avaliação no Google e cole um novo item aqui.
+ * Não edite as palavras da paciente. O grid se adapta sozinho à quantidade.
+ */
+export const reviews = [
+  {
+    name: "Claudia Chaves",
+    role: "Avaliação no Google",
+    stars: 5,
+    text: "Encontrei uma profissional para a vida! Dra Jessica utiliza técnicas que prezam pela naturalidade e leveza. O diferencial dessa profissional são os retornos gradativos, onde há escuta e diálogo, o que traz segurança e confiança ao processo. E, pela primeira vez encontrei uma profissional que se preocupa com o seu bem-estar e suas queixas de verdade. Super recomendo.",
+  },
+  {
+    name: "Day Sanches Fonseca",
+    role: "Avaliação no Google",
+    stars: 5,
+    text: "Dra. Jéssica é a melhor profissional que já conheci! Dedicada, cuida da minha pele com muito carinho e competência! Recomendo muito!!",
+  },
+];
 
 export const whatsappMessage = encodeURIComponent(
   "Olá! Gostaria de agendar uma avaliação com a Dra. Jéssica Enes."
