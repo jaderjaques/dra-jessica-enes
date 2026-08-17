@@ -88,7 +88,6 @@ const jsonLd = {
   url: site.url,
   image: `${site.url}/assets/dra-jessica.png`,
   telephone: site.phoneE164,
-  email: site.email,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,

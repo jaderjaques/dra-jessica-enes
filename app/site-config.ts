@@ -10,7 +10,8 @@ export const site = {
   phoneDisplay: "(31) 98876-1141",
   phoneE164: "+5531988761141",
   whatsapp: "5531988761141",
-  email: "contato@jessicaenes.com.br", // TODO: confirmar e-mail
+  // Sem e-mail publicado: o atendimento e o canal de direitos LGPD sao
+  // WhatsApp e telefone, que sao os canais realmente atendidos.
   instagramHandle: "@drajessicaenes",
   social: {
     instagram: "https://www.instagram.com/drajessicaenes/",

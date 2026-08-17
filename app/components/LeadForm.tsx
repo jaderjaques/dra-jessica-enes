@@ -56,6 +56,7 @@ export default function LeadForm() {
       phone: String(fd.get("phone") || ""),
       email: String(fd.get("email") || ""),
       interest: String(fd.get("interest") || ""),
+      website: String(fd.get("website") || ""),
     };
 
     const found = validate(data);
@@ -111,6 +112,12 @@ export default function LeadForm() {
         Solicitar <em>avaliação</em>
       </div>
       <div className="fs">Retornamos em até 24h por WhatsApp ou telefone.</div>
+
+      {/* Honeypot: invisível para gente, irresistível para bot. */}
+      <div className="hp" aria-hidden="true">
+        <label htmlFor="lf-website">Não preencha este campo</label>
+        <input id="lf-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
 
       <div className="field">
         <label htmlFor="lf-name">Nome completo</label>

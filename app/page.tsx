@@ -806,7 +806,13 @@ export default function Home() {
                     <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
                   </li>
                   <li>
-                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                    <a
+                      href={site.social.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WhatsApp
+                    </a>
                   </li>
                   <li>
                     <a

@@ -66,8 +66,12 @@ export default function PoliticaPrivacidade() {
       <p>
         Você pode, a qualquer momento, solicitar a confirmação, o acesso, a
         correção, a portabilidade ou a exclusão dos seus dados, bem como revogar
-        o consentimento, entrando em contato pelo e-mail{" "}
-        <a href={`mailto:${site.email}`}>{site.email}</a>.
+        o consentimento, entrando em contato pelo WhatsApp{" "}
+        <a href={site.social.whatsapp} target="_blank" rel="noopener noreferrer">
+          {site.phoneDisplay}
+        </a>{" "}
+        ou pelo telefone <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
+        . Respondemos em até 15 dias, conforme o art. 19 da LGPD.
       </p>
 
       <h2>6. Cookies</h2>
@@ -85,7 +89,8 @@ export default function PoliticaPrivacidade() {
         <br />
         {site.address.city} · {site.address.region}
         <br />
-        E-mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+        WhatsApp e telefone:{" "}
+        <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
       </p>
     </main>
   );
