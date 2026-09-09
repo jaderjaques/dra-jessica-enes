@@ -359,6 +359,7 @@ export default function Home() {
                 lábios e perfil dentro da sua proporção.
               </p>
               <ul>
+                <li>Rinomodelação</li>
                 <li>Harmonização de perfil</li>
                 <li>Definição de contorno mandibular</li>
                 <li>Lábios em proporção áurea</li>
@@ -487,7 +488,8 @@ export default function Home() {
         <section className="wrap" id="resultados" aria-label="Resultados">
           <div className="results-head">
             <div className="eyebrow reveal">
-              Em palavras de quem já passou por aqui
+              {site.googleRating.score} de 5 em {site.googleRating.count}{" "}
+              avaliações no Google
             </div>
             <h2
               className="reveal reveal-d1"
@@ -541,7 +543,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ver todas as avaliações no Google
+                Ver as {site.googleRating.count} avaliações no Google
               </a>
             </p>
           )}
@@ -594,12 +596,18 @@ export default function Home() {
             <div className="eyebrow reveal">Localização</div>
             <h2
               className="reveal reveal-d1"
-              aria-label="No coração do Centro-Sul de BH."
+              aria-label="Harmonização facial no Centro-Sul de BH, entre o Lourdes e o Santo Agostinho."
             >
-              No coração do
+              Harmonização facial no
               <br />
               <em>Centro-Sul</em> de BH.
             </h2>
+            <p className="body reveal reveal-d2">
+              A clínica fica na divisa do Lourdes com o Santo Agostinho, a
+              poucos minutos da Praça da Liberdade, da Savassi e do
+              Funcionários. Quem vem do Belvedere ou do Buritis chega pela Av.
+              Raja Gabaglia.
+            </p>
             <div className="loc-address reveal reveal-d2">
               {site.address.street}
               <br />
@@ -780,7 +788,10 @@ export default function Home() {
                     marginLeft: -10,
                   }}
                 />
-                <p>Atelier clínico em Belo Horizonte.</p>
+                <p>
+                  Harmonização facial e endodontia em Belo Horizonte, no
+                  Centro-Sul, entre o Lourdes e o Santo Agostinho.
+                </p>
               </div>
               <div className="foot-col">
                 <h2>Navegar</h2>

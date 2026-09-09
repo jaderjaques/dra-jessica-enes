@@ -27,8 +27,10 @@ export const site = {
       "https://www.google.com/maps/search/?api=1&query=R.+Santa+Catarina+813+Santo+Agostinho+Belo+Horizonte+MG+30170-081",
   },
   hours: "Seg. a Sex. · 09h às 19h",
-  // TODO: colar o link do perfil no Google (Maps > Compartilhar). Vazio = link oculto.
-  googleReviewsUrl: "",
+  googleReviewsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Consult%C3%B3rio+Dra.+J%C3%A9ssica+Enes+Belo+Horizonte",
+  /** Perfil no Google, conferido em 09/09/2026. Atualizar quando mudar. */
+  googleRating: { score: "4,9", count: 13 },
 } as const;
 
 /**
@@ -42,6 +44,18 @@ export const reviews = [
     role: "Avaliação no Google",
     stars: 5,
     text: "Encontrei uma profissional para a vida! Dra Jessica utiliza técnicas que prezam pela naturalidade e leveza. O diferencial dessa profissional são os retornos gradativos, onde há escuta e diálogo, o que traz segurança e confiança ao processo. E, pela primeira vez encontrei uma profissional que se preocupa com o seu bem-estar e suas queixas de verdade. Super recomendo.",
+  },
+  {
+    name: "Deborah Bitarães",
+    role: "Avaliação no Google",
+    stars: 5,
+    text: "Jéssica é excelente! Atendimento impecável, muito atenciosa e boa no que faz. Seu consultório é um espaço bonito, agradável e limpo. Todas as vezes que sou atendida por ela, saio bem informada, com tudo feito planejado para mim, e sempre muito satisfeita com o resultado!",
+  },
+  {
+    name: "Aparecida Silva",
+    role: "Avaliação no Google",
+    stars: 5,
+    text: "Minha experiência é fantástica a cada procedimento que faço com a Dra Jéssica, os resultados são maravilhosos e sem contar com o cuidado que tem comigo, recomendo demais, quem for vai amar com certeza!!!!",
   },
   {
     name: "Day Sanches Fonseca",

@@ -274,6 +274,7 @@ section{padding:calc(140px * var(--density)) 0;position:relative}
 .loc-text .eyebrow{margin-bottom:24px}
 .loc-text h2{font-family:var(--display);font-weight:300;font-size:clamp(40px,4.6vw,60px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:24px}
 .loc-text h2 em{font-style:italic;color:var(--sage-deep)}
+.loc-text .body{max-width:52ch;margin-bottom:28px}
 .loc-address{font-family:var(--display);font-style:italic;font-size:22px;line-height:1.4;color:var(--charcoal);margin-bottom:32px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .loc-feat{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:32px}
 .loc-feat .lf{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--charcoal)}

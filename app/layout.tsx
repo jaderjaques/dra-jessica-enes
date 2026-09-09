@@ -47,9 +47,9 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const title = "Dra. Jéssica Enes | Harmonização Facial e Endodontia";
+const title = "Harmonização Facial em BH | Dra. Jéssica Enes";
 const description =
-  "Atelier clínico em Belo Horizonte. Harmonização facial e endodontia com técnica autoral, resultado natural e discrição. Atendimento por agendamento.";
+  "Harmonização facial em BH com resultado natural. Clínica entre o Lourdes e o Santo Agostinho, Centro-Sul. Avaliação por agendamento.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -57,6 +57,17 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  keywords: [
+    "harmonização facial BH",
+    "harmonização facial Lourdes",
+    "harmonização facial Belo Horizonte",
+    "harmonização facial Santo Agostinho",
+    "preenchimento labial BH",
+    "toxina botulínica BH",
+    "rinomodelação Belo Horizonte",
+    "endodontia Belo Horizonte",
+    "Dra. Jéssica Enes",
+  ],
   openGraph: {
     title,
     description,
@@ -84,24 +95,57 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
+  "@id": `${site.url}/#clinica`,
   name: site.name,
+  description,
   url: site.url,
   image: `${site.url}/assets/dra-jessica.png`,
   telephone: site.phoneE164,
+  priceRange: "$$$",
+  currenciesAccepted: "BRL",
   address: {
     "@type": "PostalAddress",
-    streetAddress: site.address.street,
+    // O bairro entra no streetAddress: o Google casa NAP por string, e é
+    // assim que o endereço aparece no perfil do Google e no rodapé do site.
+    streetAddress: `${site.address.street}, ${site.address.complement}`,
     addressLocality: site.address.city,
     addressRegion: site.address.region,
     postalCode: site.address.postalCode,
     addressCountry: "BR",
   },
-  openingHours: "Mo-Fr 09:00-19:00",
+  hasMap: site.address.mapsUrl,
+  // Bairros atendidos. Sinal hiperlocal do Centro-Sul de BH.
+  areaServed: [
+    "Lourdes, Belo Horizonte",
+    "Santo Agostinho, Belo Horizonte",
+    "Savassi, Belo Horizonte",
+    "Funcionários, Belo Horizonte",
+    "Belvedere, Belo Horizonte",
+    "Belo Horizonte, MG",
+  ].map((name) => ({ "@type": "Place", name })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
   medicalSpecialty: ["CosmeticDentistry", "Endodontic"],
+  availableService: [
+    "Harmonização facial",
+    "Preenchimento labial",
+    "Toxina botulínica",
+    "Rinomodelação",
+    "Bioestimuladores de colágeno",
+    "Fios de sustentação (PDO)",
+    "Endodontia microscópica",
+  ].map((name) => ({ "@type": "MedicalProcedure", name })),
   founder: {
     "@type": "Person",
     name: "Jéssica Enes",
     jobTitle: "Especialista em Harmonização Facial e Endodontia",
+    identifier: site.cro,
   },
   sameAs: [site.social.instagram],
 };
