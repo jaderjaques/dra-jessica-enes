@@ -5,7 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   return [
     {
-      url: `${site.url}/`,
+      // Sem barra final, para bater exatamente com o canonical que o Next gera.
+      url: site.url,
       lastModified,
       changeFrequency: "monthly",
       priority: 1,
